@@ -11,7 +11,9 @@ body {
 }
 
 .wrapper {
+    width: 100%;
     margin: 0 auto;
+    padding: 0 10px;
 }
 
 header {
@@ -25,6 +27,7 @@ header {
 .menu {
     display: flex;
     margin-bottom: 20px;
+    display: none;
 }
 
 .menu-items {
@@ -76,17 +79,18 @@ header {
 
 .info {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-content: center;
     justify-content: space-between;
-    /* width: 100%; */
     margin-bottom: 20px;
+    min-height: 362px;
 }
 
 .gallery {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    width: 65%;
     background: #fdbf84;
     padding: 10px 10px 0px 10px;
 }
@@ -98,7 +102,7 @@ header {
 .news-container {
     display: flex;
     flex-direction: column;
-    width: 32%;
+    background: #fff;
 }
 
 .news-tabs {
@@ -204,14 +208,16 @@ header {
 
 .layout-wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    background: #fff;
 }
 
 .layout-wrapper-left {
     display: flex;
     flex-direction: column;
-    width: 75%;
+    align-items: center;
     background: #fff;
+    padding: 20px 10px;
 }
 
 .main-profiles-layout-wrapper {
@@ -219,40 +225,82 @@ header {
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    border-bottom: 3px solid #474c4d;
+    border-right: 3px solid #474c4d;
 }
 
 .main-profiles-wrapper {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
+    flex-direction: column;
+}
+
+.main-profiles-wrapper .profile {
+    padding: 5px 15px;
+    margin: 0;
+    border: none;
 }
 
 .not-main-profiles-wrapper {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
+    padding-top: 20px;
 }
 
 .profile {
     display: flex;
     flex-direction: column;
-    width: 42%;
+    justify-content: space-between;
     background: #fff5cf;
-    padding: 5px 10px 5px 10px;
-    margin: 5px;
+    padding: 5px 10px;
+    margin: 5px 0;
     border-right: 3px solid #474c4d;
     border-bottom: 3px solid #474c4d;
+
+}
+
+.profile-image {
+    border: 5px solid #fff;
+    max-width: 270px;
+}
+
+.profile a {
+    text-decoration: none;
+    color: #af5632;
 }
 
 .profile-title {
-    min-height: 50px;
+    text-align: center;
 }
 
-.profile-body-text {
-    min-height: 80px;
+.profile-title a {
+    font-size: 16px;
+    line-height: normal;
+}
+
+.profile-body {
+    text-align: center;
+}
+
+.profile-body-text p {
+    font-weight: bold;
+}
+
+.excursion-btn {
+    border: none;
+    border-radius: 5px;
+    background-color: #ffdead;
+    padding: 9px 20px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px #c2c2c2;
+    white-space: nowrap;
+}
+
+.profile-text {
+    color: #c7851d;
 }
 
 .profile-phone {
@@ -264,24 +312,20 @@ header {
 }
 
 .layout-wrapper-right {
+    padding: 20px 10px;
     display: flex;
-    flex-direction: column;
-    width: 40%;
+    justify-content: space-between;
+    flex-wrap: wrap;
     background: #fff;
 }
 
 .template,
 .faq,
 .presentation {
-    padding: 8px 20px 0 0;
-}
-
-.template-image,
-.faq-image,
-.presentation-image {
     background: #fff5cf;
     border-right: 3px solid #474c4d;
     border-bottom: 3px solid #474c4d;
+    margin-bottom: 10px;
 }
 
 .detail-wrapper {
@@ -317,7 +361,6 @@ header {
 .footer {
     display: flex;
     flex-direction: column;
-    width: 980px;
 }
 
 .footer-go-top {
@@ -357,6 +400,8 @@ header {
         max-width: 540px;
     }
 
+
+
 }
 
 @media (min-width: 768px) {
@@ -364,6 +409,33 @@ header {
         max-width: 720px;
     }
 
+    .main-profiles-wrapper {
+        flex-direction: row;
+    }
+
+    .main-profiles-wrapper .profile {
+        max-width: 50%;
+    }
+
+    .not-main-profiles-wrapper .profile {
+        width: 42%;
+    }
+
+    .gallery {
+        width: 65%;
+    }
+
+    .news-container {
+        width: 320px
+    }
+
+    .info {
+        flex-direction: row;
+    }
+
+    .profile-title {
+        min-height: 62px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -371,11 +443,32 @@ header {
         max-width: 960px;
     }
 
+    .layout-wrapper {
+        flex-direction: row;
+    }
+
+    .layout-wrapper-left {
+        width: 63%;
+    }
+
+    .layout-wrapper-right {
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    .profile-body,
+    .profile-title {
+        text-align: inherit;
+    }
+
+    .menu {
+        display: block;
+    }
 }
 
 @media (min-width: 1200px) {
     .wrapper {
-        max-width: 1140px;
+        max-width: 980px;
     }
 
 }
